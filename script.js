@@ -28,3 +28,15 @@ window.onload = function() {
       }, 1);
     }
   };
+
+  /* Force reload js and CSS */
+    // Generar un timestamp actual en milisegundos
+    var timestamp = new Date().getTime();
+        
+    // Obtener la referencia al elemento <link> de la hoja de estilos
+    var css1Element = document.getElementById('dynamic-styles-1');
+    var css2Element = document.getElementById('dynamic-styles-2');
+  
+    // Agregar el timestamp como parámetro de consulta a la URL del script
+    css1Element.src += '?v=' + timestamp;
+    css2Element.src += '?v=' + timestamp;
