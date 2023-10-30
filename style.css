@@ -24,6 +24,10 @@ a,
   transition: all 300ms ease;
 }
 
+.no-underline:hover {
+  text-decoration: none;
+}
+
 /* DESKTOP NAV */
 
 nav,
