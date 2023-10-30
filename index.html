@@ -15,13 +15,23 @@
     <meta name="keywords" content="software engineer, systems analysis, ethical hacking, android programming, java programming, josé acosta, acrajovi">
 </head>
     <body>
-        <nav id="desktop-nav">
+      <nav id="desktop-nav">        
             <div class="logo">José Acosta</div>
             <div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li>
+                      <input type="checkbox" id="toggle_checkbox">
+                      <label for="toggle_checkbox">
+                        <div id="star">
+                          <div class="star" id="star-1">★</div>
+                          <div class="star" id="star-2">★</div>
+                        </div>
+                        <div id="moon"></div>
+                      </label>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -38,6 +48,16 @@
                     <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
                     <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                     <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    <li>
+                      <input type="checkbox" id="toggle_checkbox">
+                      <label for="toggle_checkbox">
+                        <div id="star">
+                          <div class="star" id="star-1">★</div>
+                          <div class="star" id="star-2">★</div>
+                        </div>
+                        <div id="moon"></div>
+                      </label>
+                    </li>
                 </div>
             </div>
         </nav>
@@ -54,7 +74,7 @@
                     class="btn btn-color-2"
                     onclick="window.open('./assets/CurriculumVitaeActualizado-ES.pdf')"
                     >
-                    Download CV espanish
+                    Download CV spanish
                     </button>
                     <button
                     class="btn btn-color-2"
@@ -399,9 +419,5 @@
             <p>Copyright &#169; <span id="currentYear"></span> José Acosta. All Rights Reserved.</p>
           </footer>
         <script src="script.js"></script>
-        <script>
-          var currentYear = new Date().getFullYear();
-          document.getElementById("currentYear").textContent = currentYear;
-        </script>
     </body>
 </html>

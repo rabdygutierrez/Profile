@@ -34,7 +34,7 @@ nav,
 nav {
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
+  height: 16vh;
 }
 
 .nav-links {
@@ -44,7 +44,7 @@ nav {
 }
 
 a {
-  color: black;
+  color: var(--link-color);;
   text-decoration: none;
   text-decoration-color: white;
 }
@@ -87,7 +87,7 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: var(--text-color);
   transition: all 0.3 ease-in-out;
 }
 
@@ -95,7 +95,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: var(--background-color);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -107,7 +107,7 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
@@ -235,20 +235,23 @@ section {
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
+  color: var(--text-color);
 }
 
 .btn-color-1,
 .btn-color-2:hover {
   background: rgb(53, 53, 53);
-  color: white;
+  color: var(--text-color-invert);
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background:  var(--background-invert);
+  color: var(--text-color);
 }
 
 .btn-color-2 {
   background: none;
+  color: var(--text-color);
 }
 
 .btn-color-2:hover {
@@ -295,7 +298,7 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  background: var(--background-color);
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
@@ -401,4 +404,142 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* DARK_MODE */
+:root {
+  --background-color: #fff;
+  --background-color-invert: #222;
+  --text-color: #000;
+  --text-color-invert: #fff;
+  --link-color: #000;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.dark-mode {
+  --background-color: #222;
+  --background-color-invert: #fff;
+  --text-color: #fff;
+  --text-color-invert: #bbb;
+  --link-color: #fff;
+}
+
+/* Switch */
+
+#toggle_checkbox
+{
+    display: none;
+}
+
+label
+{
+    width: 100px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    border-radius: 56px;
+    transform: translateY(-13%);
+    cursor: pointer;
+    transition: 0.3s ease var(--background-color);
+    overflow: hidden;
+    display: flex;
+    margin-top: 0px;
+    justify-content: flex-end;
+    margin-right: 2em;
+    border: solid 2px;
+    border-color: var(--background-color-invert);
+}
+
+#star
+{
+    position: absolute;
+    top: 5px;
+    left: 13px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--background-color);
+    transform: scale(1);
+    border-radius: 50%;
+    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
+    z-index: 1;
+}
+
+#star-1
+{
+    position: relative;
+}
+
+#star-2
+{
+    position: absolute;
+    transform: rotateZ(36deg);
+}
+
+.star
+{
+    top: 0;
+    left: -10px;
+    font-size: 54px;
+    line-height: 28px;
+    color: #fafd0f;
+    transition: 0.3s ease color;
+}
+
+#moon
+{
+    position: absolute;
+    bottom: -52px;
+    right: 1px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease bottom;
+    top: 0px;
+}
+
+#moon:before
+{
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -17px;
+    width: 40px;
+    height: 40px;
+    background-color:background-color;
+    border-radius: 50%;
+    transition: 0.3s ease background-color;
+}
+
+#toggle_checkbox:checked + label
+{
+    background-color: #000;
+}
+
+#toggle_checkbox:checked + label #star
+{
+    top: 3px;
+    left: 64px;
+    transform: scale(0.3);
+    background-color: yellow;
+}
+
+#toggle_checkbox:checked + label .star
+{
+    color: yellow;
+    left: -40px;
+}
+
+#toggle_checkbox:checked + label #moon
+{
+    bottom: 8px;
+}
+
+#toggle_checkbox:checked + label #moon:before
+{
+    background-color: #000;
 }
