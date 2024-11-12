@@ -412,7 +412,7 @@ footer p {
 
 /* DARK_MODE */
 :root {
-  --background-color: #fff;
+  --background-color: #c6c6c6;
   --background-color-invert: #222;
   --text-color: #000;
   --text-color-invert: #fff;
@@ -547,3 +547,59 @@ label
 {
     background-color: #000;
 }
+
+/* Estilo para hacer el menú flotante */
+#desktop-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Asegúrate de que el menú quede encima de otros elementos */
+  background-color: #fff; /* Opcional: para darle fondo blanco al menú cuando se quede fijo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: agrega sombra para hacerlo más visible */
+}
+
+#hamburger-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Para que también quede encima de otros elementos */
+  background-color: #fff; /* Fondo blanco opcional */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+/* Estilo para el botón de volver al inicio */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;  /* Distancia desde el fondo */
+  right: 20px;   /* Distancia desde la derecha */
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none; /* Inicialmente oculto */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+#back-to-top:hover {
+  background-color: #0056b3; /* Color cuando se pasa el mouse */
+}
+
+
+
+
+
+/* Cambia el fondo del menú y el color del texto para usar las variables */
+#desktop-nav, #hamburger-nav {
+  background-color: var(--background-color);  /* Fondo según el modo (oscuro o claro) */
+  color: var(--text-color);  /* Color de texto según el modo */
+}
+
+#desktop-nav a, #hamburger-nav a {
+  color: var(--link-color);  /* Color de los enlaces */
+}
+
+#desktop-nav a:hover, #hamburger-nav a:hover {
+  color: var(--text-color-invert);  /* Color de los enlaces al pasar el mouse */
+}
+

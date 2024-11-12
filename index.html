@@ -11,8 +11,9 @@
     <link rel="icon" type="image/png" href="./assets/favicon.png">
     <meta name="description" content="Portfolio of José Acosta">
     <meta name="author" content="José Acosta">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="software engineer, systems analysis, ethical hacking, android programming, java programming, josé acosta, acrajovi">
+    <meta name="robots" content="index, follow">
+
 </head>
     <body>
       <nav id="desktop-nav">        
@@ -24,13 +25,38 @@
                     <li><a href="#contact">Contact</a></li>
                     <li>
                       <input type="checkbox" id="toggle_checkbox">
-                      <label for="toggle_checkbox">
-                        <div id="star">
-                          <div class="star" id="star-1">★</div>
-                          <div class="star" id="star-2">★</div>
-                        </div>
-                        <div id="moon"></div>
-                      </label>
+                      <button onclick="toggleDarkMode()">
+                        <svg width="30" height="30" id="light-icon">
+                          <circle cx="15" cy="15" r="6" fill="currentColor" />
+                          <line
+                            id="ray"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            x1="15"
+                            y1="1"
+                            x2="15"
+                            y2="4"
+                          ></line>
+                  
+                          <use href="#ray" transform="rotate(45 15 15)" />
+                          <use href="#ray" transform="rotate(90 15 15)" />
+                          <use href="#ray" transform="rotate(135 15 15)" />
+                          <use href="#ray" transform="rotate(180 15 15)" />
+                          <use href="#ray" transform="rotate(225 15 15)" />
+                          <use href="#ray" transform="rotate(270 15 15)" />
+                          <use href="#ray" transform="rotate(315 15 15)" />
+                        </svg>
+                        <svg width="30" height="30" id="dark-icon">
+                          <path
+                            fill="currentColor"
+                            d="
+                            M 23, 5
+                            A 12 12 0 1 0 23, 25
+                            A 12 12 0 0 1 23, 5"
+                          />
+                        </svg>
+                      </button>
                     </li>
                 </ul>
             </div>
@@ -49,14 +75,39 @@
                     <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                     <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                     <li>
-                      <input type="checkbox" id="toggle_checkbox">
-                      <label for="toggle_checkbox">
-                        <div id="star">
-                          <div class="star" id="star-1">★</div>
-                          <div class="star" id="star-2">★</div>
-                        </div>
-                        <div id="moon"></div>
-                      </label>
+                      <button onclick="toggleDarkMode()">
+                        <svg width="30" height="30" id="light-icon">
+                          <circle cx="15" cy="15" r="6" fill="currentColor" />
+                  
+                          <line
+                            id="ray"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            x1="15"
+                            y1="1"
+                            x2="15"
+                            y2="4"
+                          ></line>
+                  
+                          <use href="#ray" transform="rotate(45 15 15)" />
+                          <use href="#ray" transform="rotate(90 15 15)" />
+                          <use href="#ray" transform="rotate(135 15 15)" />
+                          <use href="#ray" transform="rotate(180 15 15)" />
+                          <use href="#ray" transform="rotate(225 15 15)" />
+                          <use href="#ray" transform="rotate(270 15 15)" />
+                          <use href="#ray" transform="rotate(315 15 15)" />
+                        </svg>
+                        <svg width="30" height="30" id="dark-icon">
+                          <path
+                            fill="currentColor"
+                            d="
+                            M 23, 5
+                            A 12 12 0 1 0 23, 25
+                            A 12 12 0 0 1 23, 5"
+                          />
+                        </svg>
+                      </button>
                     </li>
                 </div>
             </div>
@@ -68,7 +119,7 @@
             <div class="section__text">
                 <p class="section__text__p1">Hello, I'm</p>
                 <h1 class="title">José Acosta</h1>
-                <p class="section__text__p2">Software Engineer</p>
+                <p class="section__text__p2">Sr. Software Engineer</p>
                 <div class="btn-container">
                     <button
                     class="btn btn-color-2"
@@ -116,7 +167,7 @@
                             class="icon"
                             />
                             <h3>Experience </h3>
-                            <p>10+ years <br>Full stack Development </p>
+                            <p>12+ years <br>Full stack Development </p>
                         </div>
                         <div class="details-container">
                             <img 
@@ -365,7 +416,7 @@
               </div>
               <div class="text-container">
                 <p>Full Stack
-                  Developer with more than 10 years
+                  Developer with more than 12 years
                   of experience in developing
                   Desktop/web computer systems
                   (FrontEnd and BackEnd) APIS,
@@ -419,5 +470,9 @@
             <p>Copyright &#169; <span id="currentYear"></span> José Acosta. All Rights Reserved.</p>
           </footer>
         <script src="script.js" cache-control="no-cache" expires="0"></script>
+        <!-- Botón para volver al inicio -->
+      <button id="back-to-top" class="back-to-top" title="Volver al inicio">
+        ↑
+      </button>
     </body>
 </html>
