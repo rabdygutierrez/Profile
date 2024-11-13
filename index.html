@@ -15,11 +15,17 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="José Acosta Portfolio">
     <meta property="og:description" content="Portfolio of José Acosta - Software Engineer">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acrajovi.bio.com.py"> 
+    <meta property="og:image" content="https://acrajovi.bio.com.py/assets/profile-pic.png">
+    <meta property="og:locale" content="es_EN"> 
+    <meta name="copyright" content="© 2024 José Acosta">
+
 
 </head>
     <body>
       <nav id="desktop-nav">        
-        <div class="logo"><a href="#" class="no-underline">José Acosta</a></div>
+        <div class="my-name"><a href="#" class="no-underline">José Acosta</a></div>
             <div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
@@ -64,7 +70,7 @@
             </div>
         </nav>
         <nav id="hamburger-nav">
-          <div class="logo"><a href="#" class="no-underline">José Acosta</a></div>
+          <div class="my-name"><a href="#" class="no-underline">José Acosta</a></div>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
@@ -76,11 +82,10 @@
                     <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
                     <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                     <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                    <li>
+                    <li class="center">
                       <button onclick="toggleDarkMode()">
                         <svg width="30" height="30" id="light-icon">
                           <circle cx="15" cy="15" r="6" fill="currentColor" />
-                  
                           <line
                             id="ray"
                             stroke="currentColor"

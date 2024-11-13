@@ -60,8 +60,9 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
+.my-name {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .logo:hover {
@@ -120,8 +121,16 @@ a:hover {
   list-style: none;
 }
 
+.menu-links li :hover{
+  background: rgb(53, 53, 53);
+}
+
 .menu-links.open {
   max-height: 300px;
+  box-shadow: 10px 10px 10px rgb(11 11 11 / 10%);
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 23px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -415,7 +424,7 @@ footer p {
   --background-color: #c6c6c6;
   --background-color-invert: #222;
   --text-color: #000;
-  --text-color-invert: #fff;
+  --text-color-invert: #dddddd;
   --link-color: #000;
 }
 
@@ -425,7 +434,7 @@ body {
 }
 
 .dark-mode {
-  --background-color: #222;
+  --background-color: #232323;
   --background-color-invert: #fff;
   --text-color: #fff;
   --text-color-invert: #bbb;
@@ -554,7 +563,7 @@ label
   top: 0;
   z-index: 1000; /* Asegúrate de que el menú quede encima de otros elementos */
   background-color: #fff; /* Opcional: para darle fondo blanco al menú cuando se quede fijo */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: agrega sombra para hacerlo más visible */
+  box-shadow: 10px 10px 10px rgb(11 11 11 / 10%); /* Opcional: agrega sombra para hacerlo más visible */
 }
 
 #hamburger-nav {
@@ -562,7 +571,7 @@ label
   top: 0;
   z-index: 1000; /* Para que también quede encima de otros elementos */
   background-color: #fff; /* Fondo blanco opcional */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  box-shadow: 10px 10px 10px rgb(11 11 11 / 10%); /* Sombra opcional */
 }
 
 /* Estilo para el botón de volver al inicio */
@@ -570,8 +579,8 @@ label
   position: fixed;
   bottom: 20px;  /* Distancia desde el fondo */
   right: 20px;   /* Distancia desde la derecha */
-  background-color: #007bff; /* Color de fondo */
-  color: white; /* Color del texto */
+  background-color: rgb(53, 53, 53);; /* Color de fondo */
+  color: var(--text-color-invert); /* Color del texto */
   border: none;
   border-radius: 50%;
   padding: 10px 15px;
@@ -582,7 +591,7 @@ label
 }
 
 #back-to-top:hover {
-  background-color: #0056b3; /* Color cuando se pasa el mouse */
+  background-color: var(--background-color-invert); /* Color cuando se pasa el mouse */
 }
 
 
@@ -593,6 +602,8 @@ label
 #desktop-nav, #hamburger-nav {
   background-color: var(--background-color);  /* Fondo según el modo (oscuro o claro) */
   color: var(--text-color);  /* Color de texto según el modo */
+  max-height: 4em;
+  box-shadow: 10px 10px 10px rgb(11 11 11 / 10%); /* Opcional: agrega sombra para hacerlo más visible */
 }
 
 #desktop-nav a, #hamburger-nav a {
@@ -601,5 +612,10 @@ label
 
 #desktop-nav a:hover, #hamburger-nav a:hover {
   color: var(--text-color-invert);  /* Color de los enlaces al pasar el mouse */
+  
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
