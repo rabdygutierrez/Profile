@@ -177,7 +177,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  height: 100vh;
 }
 /* Copyright José Acosta. All Rights Reserved. */
 .section__pic-container {
@@ -306,6 +306,12 @@ section {
   position: absolute;
   right: -5rem;
   bottom: 2.5rem;
+}
+
+.arrow-first {
+  position: absolute;
+  right: 10rem;
+  bottom: .5rem;
 }
 
 .details-container {
@@ -594,10 +600,6 @@ label
   background-color: var(--background-color-invert); /* Color cuando se pasa el mouse */
 }
 
-
-
-
-
 /* Cambia el fondo del menú y el color del texto para usar las variables */
 #desktop-nav, #hamburger-nav {
   background-color: var(--background-color);  /* Fondo según el modo (oscuro o claro) */
@@ -619,3 +621,4 @@ label
   display: flex;
   justify-content: center;
 }
+
