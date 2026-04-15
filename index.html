@@ -8,28 +8,34 @@
     <title>Rabdy Gutiérrez</title>
     <link rel="stylesheet" id="dynamic-styles-1" href="style.css">
     <link rel="stylesheet" id="dynamic-styles-2" href="mediaqueries.css">
-    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="icon" type="image/png" href="./assets/profile-pic.png">
     <meta name="description" content="Portfolio of Rabdy Gutiérrez">
     <meta name="author" content="Rabdy Gutiérrez">
-    <meta name="keywords" content="QA Automation, Stress Test, Security Test, Rabdy Gutiérrez">
+    <meta name="keywords" content="QA Automation, QA Lead, QA Manager, Team Leadership, Test Strategy, ISTQB, Playwright, Cypress, Selenium, JMeter, Rabdy Gutiérrez">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Rabdy Gutiérrez Portfolio">
-    <meta property="og:description" content="Portfolio of Rabdy Gutiérrez - QA Engineer">
+    <meta property="og:description" content="Portfolio of Rabdy Gutiérrez - QA Lead Engineer | 18+ years building QA teams and methodologies from scratch">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rabdygutierrez.github.io"> 
-    <meta property="og:image" content="https://rabdygutierrez.github.io/assets/profile-pic.jpg">
+    <meta property="og:image" content="https://rabdygutierrez.github.io/assets/profile-pic.png">
     <meta property="og:locale" content="es_EN"> 
     <meta name="copyright" content="© 2025 Rabdy Gutiérrez">
 
 </head>
     <body>
+      <div id="scroll-progress"></div>
       <nav id="desktop-nav">        
         <div class="my-name"><a href="#" class="no-underline">Rabdy Gutiérrez</a></div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" data-key="nav.about">About</a></li>
+                    <li><a href="#experience" data-key="nav.experience">Experience</a></li>
+                    <li><a href="#contact" data-key="nav.contact">Contact</a></li>
+                    <li>
+                      <button class="lang-btn" onclick="toggleLang()" title="Cambiar idioma / Switch language">
+                        <span id="lang-label">EN</span>
+                      </button>
+                    </li>
                     <li>
                       <input type="checkbox" id="toggle_checkbox">
                       <button onclick="toggleDarkMode()">
@@ -77,10 +83,12 @@
                     <span></span>
                 </div>
                 <div class="menu-links">
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    <li><a href="#about" onclick="toggleMenu()" data-key="nav.about">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()" data-key="nav.experience">Experience</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()" data-key="nav.contact">Contact</a></li>
+                    <li class="center">
+                      <button class="lang-btn" onclick="toggleLang()" title="Cambiar idioma / Switch language">EN | ES</button>
+                    </li>
                     <li class="center">
                       <button onclick="toggleDarkMode()">
                         <svg width="30" height="30" id="light-icon">
@@ -120,28 +128,34 @@
         </nav>
         <section id="profile">
             <div class="section__pic-container">
-                    <img src="./assets/profile-pic.jpg" alt="Rabdy Gutiérrez profile picture"/>
+                    <img src="./assets/profile-pic.png" alt="Rabdy Gutiérrez profile picture"/>
             </div>
             <div class="section__text">
                 <p class="section__text__p1">Hello, I'm</p>
                 <h1 class="title">Rabdy Gutiérrez</h1>
-                <p class="section__text__p2">Sr. QA Engineer</p>
+                <p class="section__text__p2">QA Lead Engineer · QA Builder · Team Leader</p>
                 <div class="btn-container">
                     <button
+                    id="btn-cv-es"
                     class="btn btn-color-2"
                     onclick="window.open('./assets/CurriculumVitaeActualizado-ES.pdf')"
+                    data-key="hero.cvEs"
                     >
-                    Download CV spanish
+                    Download CV Spanish
                     </button>
                     <button
+                    id="btn-cv-en"
                     class="btn btn-color-2"
                     onclick="window.open('./assets/CurriculumVitaeActualizado-EN.pdf')"
+                    data-key="hero.cvEn"
                     >
-                    Download CV english
+                    Download CV English
                     </button>
                     <button
+                    id="btn-contact"
                     class="btn btn-color-1 "
                     onclick="location.href='./#contact'"
+                    data-key="hero.contact"
                     >
                     Contact Info
                     </button>
@@ -149,8 +163,25 @@
                 <div id="socials-container">
                   <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="window.open('https://www.linkedin.com/in/rabdygutierrez/', '_blank')">
                   <img src="./assets/github.png" alt="My GitHub profile" class="icon" onclick="window.open('https://rabdygutierrez.github.io', '_blank')">
-                  
-              </div>              
+                </div>
+                <div class="hero-stats">
+                  <div class="hero-stat">
+                    <span class="hero-stat-num">18+</span>
+                    <span class="hero-stat-label" data-key="stat.years">Years</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-num">5+</span>
+                    <span class="hero-stat-label" data-key="stat.sectors">Sectors</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-num">3+</span>
+                    <span class="hero-stat-label" data-key="stat.teams">QA Teams Built</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-num">ISTQB</span>
+                    <span class="hero-stat-label" data-key="stat.cert">Certified</span>
+                  </div>
+                </div>
             </div>
             <img src="./assets/arrow.png" 
               alt="Arrow icon" 
@@ -159,65 +190,72 @@
               />
         </section>
         <section id="about">
-            <p class="section__text__p1">Get to know More</p>
-            <h1 class="title">About Me</h1>
-            <div class="section-container">
-                <div class="section__pic-container">
-                    <img 
-                        src="./assets/about-pic.png"
-                        alt="Profile picture"
-                        class="about-pic"
-                    />
-                </div>
-                <div class="about-details-container">
+            <p class="section__text__p1" data-key="about.p1">Get to know More</p>
+            <h1 class="title" data-key="about.title">About Me</h1>
+            <div class="about-details-container">
                     <div class="about-containers">
                         <div class="details-container">
-                            <img 
-                            src="./assets/experience.png" 
+                            <img
+                            src="./assets/experience.png"
                             alt="Experience icon"
                             class="icon"
                             />
-                            <h3>Experience </h3>
-                            <p>18+ years <br>QA Engineer </p>
+                            <h3 data-key="about.expLabel">Experience</h3>
+                            <p id="about-exp-val"><span id="years-counter">18</span>+ years <br>QA Engineering & Leadership</p>
                         </div>
                         <div class="details-container">
-                            <img 
-                            src="./assets/education.png" 
+                            <img
+                            src="./assets/education.png"
                             alt="Education icon"
                             class="icon"
                             />
-                            <h3>Education</h3>
+                            <h3 data-key="about.eduLabel">Education</h3>
                             <p>
-                              Master of Science in Computer
+                              M.Sc. Computer Science
                             <br>
-                            Electronic Engineer in Computing.
+                            Electronic Engineer (Computing)
                             <br>
-                            ISTQB Certification</p>
+                            ISTQB Certified</p>
+                        </div>
+                        <div class="details-container">
+                            <img
+                            src="./assets/experience.png"
+                            alt="Leadership icon"
+                            class="icon"
+                            />
+                            <h3 data-key="about.leadLabel">Leadership</h3>
+                            <p id="about-lead-val">QA Areas built from scratch<br>Teams trained & mentored<br>Multi-sector experience</p>
                         </div>
                     </div>
                     <div class="text-container">
-                      <p>Universidad UCLA
-                        Master of Science in Computer
-                        (2010-2014)<p>
-                      </p>Universidad Yacambu
-                        Electronic Engineer in Computing
-                        (2000-2005)</p>
+                      <p id="about-text-p">
+                        With 18+ years in Quality Assurance, I specialize in <strong>building QA departments from the ground up</strong> —
+                        defining strategy, selecting toolchains, establishing processes, and scaling teams across banking, insurance,
+                        telecommunications, retail, and distribution sectors.
+                        <br><br>
+                        I lead by doing: designing and implementing proven QA methodologies (risk-based testing, shift-left, test strategy & planning),
+                        while actively <strong>training and coaching QA engineers</strong> to grow both technically and professionally.
+                        <br><br>
+                        <em>Universidad UCLA — M.Sc. Computer Science (2010–2014)</em><br>
+                        <em>Universidad Yacambú — Electronic Engineer in Computing (2000–2005)</em>
+                      </p>
                     </div>
                 </div>
             </div>
-            <img src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow" 
+            <img src="./assets/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
             onclick="location.href='./#experience'"
             />
         </section>
+
         <section id="experience">
-            <p class="section__text__p1">Explore My</p>
-            <h1 class="title">Experience</h1>
+            <p class="section__text__p1" data-key="exp.p1">Explore My</p>
+            <h1 class="title" data-key="exp.title">Experience</h1>
             <div class="experience-details-container">
               <div class="about-containers">
                 <div class="details-container">
-                  <h2 class="experience-sub-title">QA AUTOMATION</h2>
+                  <h2 class="experience-sub-title" data-key="exp.automation">QA AUTOMATION</h2>
                   <div class="article-container">
                     <article>
                       <img
@@ -288,7 +326,7 @@
                   </div>
                 </div>
                 <div class="details-container">
-                  <h2 class="experience-sub-title">Performance</h2>
+                  <h2 class="experience-sub-title" data-key="exp.performance">Performance</h2>
                   <div class="article-container">
                     <article>
                       <img
@@ -359,7 +397,54 @@
                   </div>
                 </div>
                 <div class="details-container">
-                  <h2 class="experience-sub-title">Others Skills</h2>
+                  <h2 class="experience-sub-title" data-key="exp.leadership">QA Leadership & Strategy</h2>
+                  <div class="article-container">
+                    <article>
+                      <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                      <div>
+                        <h3>QA Area Setup</h3>
+                        <p>From scratch</p>
+                      </div>
+                    </article>
+                    <article>
+                      <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                      <div>
+                        <h3>Test Strategy</h3>
+                        <p>Experienced</p>
+                      </div>
+                    </article>
+                    <article>
+                      <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                      <div>
+                        <h3>Team Training</h3>
+                        <p>Experienced</p>
+                      </div>
+                    </article>
+                    <article>
+                      <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                      <div>
+                        <h3>Risk-Based Testing</h3>
+                        <p>Experienced</p>
+                      </div>
+                    </article>
+                    <article>
+                      <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                      <div>
+                        <h3>Shift-Left QA</h3>
+                        <p>Experienced</p>
+                      </div>
+                    </article>
+                    <article>
+                      <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                      <div>
+                        <h3>ISTQB Methodology</h3>
+                        <p>Certified</p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="details-container">
+                  <h2 class="experience-sub-title" data-key="exp.others">Others Skills</h2>
                   <div class="article-container">
                     <article>
                       <img
@@ -431,16 +516,23 @@
                 </div>
               </div>
               <div class="text-container">
-                <p style="font-size: larger; text-align: center;"> LEAD QA Automation Engineer
-                  QA with more than 18 years
-                  With strong knowledge in planning, execution, 
-                  control, and leadership across, sectors such as banking, 
-                  insurance, telecommunications,retail, and distribution
-                  Team Training: Trained and coached the team on QA
-                  Tools and Technologies: Proficient in Azure-DevOps,
-                  Jira, Katalon, Cypress, Postman, DBeaver, MySQL,
-                  Selenium, Playwright, k6, Jmeter, Grafana, and
-                  AppOptics.</p>
+                <div id="exp-text-p" class="exp-summary">
+                  <p class="exp-summary-title">QA Lead Automation Engineer — 18+ Years Building Quality from the Ground Up</p>
+                  <div class="exp-highlights">
+                    <div class="exp-highlight">
+                      <p>Throughout my career I have <strong>created and structured QA departments from scratch</strong> in multiple organizations — defining test strategies, implementing proven methodologies, selecting toolchains, and establishing quality gates that scale with the product.</p>
+                    </div>
+                    <div class="exp-highlight">
+                      <p>I have led cross-functional QA teams across banking, insurance, telecommunications, retail, and distribution, always with a focus on <strong>mentoring and training engineers</strong> to become autonomous, high-impact contributors.</p>
+                    </div>
+                    <div class="exp-highlight">
+                      <p>My approach combines <em>shift-left practices, risk-based testing, and ISTQB methodology</em> with hands-on expertise in modern automation stacks.</p>
+                    </div>
+                  </div>
+                  <div class="exp-stack">
+                    <span>Playwright</span><span>Cypress</span><span>Selenium</span><span>Katalon</span><span>Postman</span><span>k6</span><span>JMeter</span><span>Grafana</span><span>AppOptics</span><span>Jenkins</span><span>SonarQube</span><span>Azure DevOps</span><span>Jira</span>
+                  </div>
+                </div>
               </div>
             </div>
             <img
@@ -451,8 +543,9 @@
             />
           </section>
           <section id="contact">
-            <p class="section__text__p1">Get in Touch</p>
-            <h1 class="title">Contact Me</h1>
+            <p class="section__text__p1" data-key="contact.p1">Get in Touch</p>
+            <h1 class="title" data-key="contact.title">Contact Me</h1>
+            <p class="contact-cta" data-key="contact.cta">Available for new opportunities</p>
             <div class="contact-info-upper-container">
               <div class="contact-info-container">
                 <img
@@ -476,9 +569,9 @@
             <nav>
               <div class="nav-links-container">
                 <ul class="nav-links">
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#experience">Experience</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#about" data-key="nav.about">About</a></li>
+                  <li><a href="#experience" data-key="nav.experience">Experience</a></li>
+                  <li><a href="#contact" data-key="nav.contact">Contact</a></li>
                 </ul>
               </div>
             </nav>

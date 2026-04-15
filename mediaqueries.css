@@ -48,6 +48,13 @@
   }
   
   @media screen and (max-width: 600px) {
+    .hero-stats {
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat-num {
+      font-size: 1.1rem;
+    }
     #contact,
     footer {
       height: 40vh;
